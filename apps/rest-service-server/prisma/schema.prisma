@@ -6,3 +6,15 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Person {
+  createdAt      DateTime @default(now())
+  documentNumber String   @unique
+  documentType   String
+  firstName      String
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  lastName       String
+  secondLastName String?
+  secondName     String?
+  updatedAt      DateTime @updatedAt
+}
