@@ -1,8 +1,9 @@
-import { Field } from "@nestjs/graphql";
+import { ObjectType, Field } from "@nestjs/graphql";
 import { EPersonDocumentType } from "./EPersonDocumentType";
 import { ApiProperty } from "@nestjs/swagger";
 import { Type } from "class-transformer";
 
+@ObjectType("IPersonObject")
 class IPerson {
     @Field(() => EPersonDocumentType)
     @ApiProperty({
